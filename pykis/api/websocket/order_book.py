@@ -137,6 +137,9 @@ class KisDomesticRealtimeOrderbook(KisRealtimeOrderbookBase):
         None,  # 56 OVTM_TOTAL_ASKP_ICDC 시간외 총 매도호가 증감
         None,  # 57 OVTM_TOTAL_BIDP_ICDC 시간외 총 매수호가 증감
         None,  # 58 STCK_DEAL_CLS_CODE 주식 매매 구분 코드
+        None,  # 59 ASPR_UNIT 호가 단위
+        None,  # 60 STCK_OPRC 시가
+        None,  # 61 PRDY_VOL 전일거래량
     ]
 
     symbol: str  # MKSC_SHRN_ISCD 유가증권 단축 종목코드
