@@ -483,10 +483,10 @@ class KisDomesticRealtimePrice(KisRealtimePriceBase):
             "condition"
         ],  # 34 NEW_MKOP_CLS_CODE 신 장운영 구분 코드
         None,  # 35 TRHT_YN 거래정지 여부
-        None,  # 36 ASKP_RSQN1 매도호가 잔량1
-        None,  # 37 BIDP_RSQN1 매수호가 잔량1
-        KisInt["ask_quantity"],  # 38 TOTAL_ASKP_RSQN 총 매도호가 잔량
-        KisInt["bid_quantity"],  # 39 TOTAL_BIDP_RSQN 총 매수호가 잔량
+        KisInt["ask_quantity"],  # 36 ASKP_RSQN1 매도호가 잔량1
+        KisInt["bid_quantity"],  # 37 BIDP_RSQN1 매수호가 잔량1
+        KisInt["total_ask_quantity"],  # 38 TOTAL_ASKP_RSQN 총 매도호가 잔량
+        KisInt["total_bid_quantity"],  # 39 TOTAL_BIDP_RSQN 총 매수호가 잔량
         None,  # 40 VOL_TNRT 거래량 회전율
         KisInt["prev_volume"],  # 41 PRDY_SMNS_HOUR_ACML_VOL 전일 동시간 누적 거래량
         None,  # 42 PRDY_SMNS_HOUR_ACML_VOL_RATE 전일 동시간 누적 거래량 비율
@@ -572,6 +572,11 @@ class KisDomesticRealtimePrice(KisRealtimePriceBase):
 
     decimal_places: int = 1
     """소수점 자리수"""
+
+    total_ask_quantity: int
+    """총 매도호가 잔량"""
+    total_bid_quantity: int
+    """총 매수호가 잔량"""
 
     def __pre_init__(self, data: list[str]):
         super().__pre_init__(data)
